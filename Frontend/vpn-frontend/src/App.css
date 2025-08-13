@@ -1,0 +1,54 @@
+@import "tailwindcss";
+/* DarkModeToggle.css */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Width of the button */
+  height: 50px; /* Height of the button */
+  border-radius: 50%; /* Makes the button circular */
+  cursor: pointer;
+  background: #00adb5; /* Default background color */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  border: none; /* Remove default border */
+}
+
+.theme-toggle-btn.light {
+  background: linear-gradient(135deg, #00d1ff, #007bff); /* Light mode gradient */
+}
+
+.theme-toggle-btn.dark {
+  background: linear-gradient(135deg, #ffd700, #ff6347); /* Dark mode gradient */
+}
+
+.theme-toggle-btn:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+.theme-icon {
+  width: 24px; /* Size of the icons */
+  height: 24px; /* Size of the icons */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions for icons */
+}
+
+.theme-toggle-btn.dark .theme-icon.sun {
+  transform: translateY(-15px); /* Move sun icon out of view */
+  opacity: 0; /* Fade out */
+}
+
+.theme-toggle-btn.dark .theme-icon.moon {
+  transform: translateY(0); /* Bring moon icon into view */
+  opacity: 1; /* Fade in */
+}
+
+.theme-toggle-btn.light .theme-icon.sun {
+  transform: translateY(0); /* Bring sun icon into view */
+  opacity: 1; /* Fade in */
+}
+
+.theme-toggle-btn.light .theme-icon.moon {
+  transform: translateY(15px); /* Move moon icon out of view */
+  opacity: 0; /* Fade out */
+}
